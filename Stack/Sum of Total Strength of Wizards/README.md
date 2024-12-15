@@ -119,8 +119,8 @@ class Solution:
 #### Java
 
 ```java
-class Solution {
-    public int totalStrength(int[] strength) {
+public class Main {
+    public static int fun(int[] strength) {
         int n = strength.length;
         int[] left = new int[n];
         int[] right = new int[n];
@@ -164,6 +164,14 @@ class Solution {
             ans = (ans + v * ((a - b) % mod)) % mod;
         }
         return (int) (ans + mod) % mod;
+    }
+    public static void main(String[] args) {
+      Scanner z=new Scanner(System.in);
+      String x[]=z.nextLine().split(" ");
+      int a[]=new int[x.length];
+      for(int i=0;i<x.length;i++)
+        a[i]=Integer.parseInt(x[i]);
+        System.out.println(fun(a));
     }
 }
 ```
