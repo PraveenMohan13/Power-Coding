@@ -92,7 +92,28 @@ class Solution:
                 ans += 1
         return ans
 ```
+#### Java
 
+```java
+class Solution {
+    public int minOperations(String[] logs) {
+        Stack st1=new Stack();
+        for(int i=0;i<logs.length;i++){
+            if(logs[i].equals("../")){
+                if(!st1.isEmpty()){
+                    st1.pop();
+                }
+            }
+            else if(logs[i].charAt(0) != '.'){
+                st1.push(logs[i]);
+            }
+           
+        }
+
+        return st1.size();
+    }
+}
+```
 #### Java
 
 ```java
