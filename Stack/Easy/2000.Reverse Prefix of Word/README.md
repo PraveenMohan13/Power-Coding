@@ -103,7 +103,26 @@ class Solution {
     }
 }
 ```
+#### Java
 
+```java
+public String reversePrefix(String word, char ch) {
+    Stack<Character> st = new Stack<>();
+    String res = "";
+    for(int i =0; i<word.length(); i++){
+        char currch = word.charAt(i);
+        st.push(currch);  // pushing chars in stack until req char
+        if(currch == ch){  // required character then 
+            while(!st.isEmpty()){
+                res = res + st.pop(); // empty the stack by popping it
+            }
+            res = res + word.substring(i+1, word.length());  // add string to result
+            return res;
+        }
+    }
+    return word;
+}
+```
 #### C++
 
 ```cpp
