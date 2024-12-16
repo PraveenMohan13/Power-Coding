@@ -130,6 +130,34 @@ class Solution {
     }
 }
 ```
+#### Java
+
+```java
+
+class Solution {
+    public String makeGood(String s) {
+        ArrayDeque<Character> charStack = new ArrayDeque<>();
+        for (char currChar : s.toCharArray()) {
+            if (charStack.isEmpty()) {
+                charStack.push(currChar);
+            } else {
+                if ((Character.isUpperCase(charStack.peek()) != Character.isUpperCase(currChar))
+                    && (Math.abs(charStack.peek() - currChar) == 32)) {
+                    charStack.pop();
+                } else {
+                    charStack.push(currChar);
+                }
+            }
+        }
+        StringBuilder ans = new StringBuilder();
+        while (!charStack.isEmpty()) {
+            ans.append(charStack.pop());
+        }
+        return ans.reverse().toString();
+    }
+}
+```
+
 #### C++
 
 ```cpp
