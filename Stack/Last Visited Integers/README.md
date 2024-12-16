@@ -139,6 +139,32 @@ class Solution {
 }
 ```
 
+#### Java
+
+```java
+class Solution {
+    public List<Integer> lastVisitedIntegers(List<String> words) {
+        Stack<Integer> stack = new Stack<>();
+        List<Integer> ans = new ArrayList<>();
+        int k = 0;
+        for (var w : words) {
+            if ("prev".equals(w)) {
+                ++k;
+                if(stack.size()>=k)
+		  ans.add(stack.pop());
+		else
+		  ans.add(-1);
+            } else {
+                k = 0;
+                stack.push(Integer.valueOf(w));
+            }
+        }
+        return ans;
+    }
+}
+```
+
+
 #### C++
 
 ```cpp
