@@ -148,6 +148,7 @@ class Solution {
         return min_res;
     }
 ```
+#### Java
 ```java
         public static long minCost(int[] nums, int x) {
         // rotate min(A) to A[0]
