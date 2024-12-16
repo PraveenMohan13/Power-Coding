@@ -125,7 +125,72 @@ class Solution {
     }
 }
 ```
+#### Java
 
+```java
+    public long minCost(int[] A, int x) {
+        int n = A.length;
+        long[] res = new long[n];
+        for (int i = 0; i < n; i++) {
+            res[i] += 1L * i * x;
+            int cur = A[i];
+            for (int k = 0; k < n; k++) {
+                cur = Math.min(cur, A[(i - k + n) % n]);
+                res[k] += cur;
+            }
+        }
+
+        long min_res = Long.MAX_VALUE;
+        for (long element : res) {
+            min_res = Math.min(min_res, element);
+        }
+
+        return min_res;
+    }
+```
+```java
+        public static long minCost(int[] nums, int x) {
+        // rotate min(A) to A[0]
+        int mi = 0, n = nums.length, A[] = new int[n];
+        for (int i = 0; i < n; i++)
+            if (nums[i] < nums[mi])
+                mi = i;
+        for (int i = 0; i < n; i++)
+            A[i] = nums[(i + mi) % n];
+
+        // find next smaller elements on left and right
+        int[] left = new int[n], right = new int[n];
+        Stack<Integer> st = new Stack<>();
+        for (int i = 0; i < n; i++) {
+            right[i] = n;
+            while (!st.isEmpty() && A[st.peek()] > A[i])
+                right[st.pop()] = i;
+            if (!st.isEmpty())
+                left[i] = st.peek();
+            st.push(i);
+        }
+
+        // delta of delta of results
+        long[] res = new long[n + 1];
+        res[0] = A[0];
+        res[1] = x;
+
+        // trapezoid curve for A[i] contribution
+        for (int i = 1; i < n; i++) {
+            res[0] += A[i];
+            res[Math.min(i - left[i], right[i] - i)] -= A[i];
+            res[Math.max(i - left[i], right[i] - i)] -= A[i];
+            res[right[i] - left[i]] += A[i];
+        }
+
+        // Calculate prefix sum of res for twice
+        for (int i = 1; i <= n; i++)
+            res[i] += res[i - 1];
+        for (int i = 1; i <= n; i++)
+            res[i] += res[i - 1];
+        return Arrays.stream(res).min().getAsLong();
+    }
+```
 #### C++
 
 ```cpp
