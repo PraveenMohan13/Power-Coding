@@ -66,7 +66,7 @@ After removing outer parentheses of each part, this is &quot;&quot; + &quot;&quo
 	<li><code>s</code> is a valid parentheses string.</li>
 </ul>
 
-<!-- description:end -->
+<!-- description:end --> 
 
 ## Solutions
 
