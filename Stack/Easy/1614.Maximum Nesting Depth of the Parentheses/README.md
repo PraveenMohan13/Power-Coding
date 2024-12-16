@@ -82,7 +82,34 @@ class Solution:
                 d -= 1
         return ans
 ```
+#### Java
 
+```java
+class Solution 
+{
+    public int maxDepth(String s) 
+    {
+        int maxCount =0;
+        int count=0;
+        int n = s.length();
+        Stack<Character> st = new Stack<>();
+        for(int i=0; i<=n-1; i++)
+        {
+            if(s.charAt(i) == '(')
+            {
+                count++;
+                maxCount = Math.max(count, maxCount);
+            }
+            else if(s.charAt(i) == ')')
+            {
+                count--;
+            }
+        }
+
+        return maxCount;
+    }
+}
+```
 #### Java
 
 ```java
