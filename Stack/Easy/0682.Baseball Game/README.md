@@ -164,7 +164,12 @@ class Solution {
                 stk.push(Integer.valueOf(op));
             }
         }
-        return stk.stream().mapToInt(Integer::intValue).sum();
+	int sum=0;
+        while(!stk.isEmpty()){
+            sum+=stk.pop();
+        }
+        return sum;
+        //return stk.stream().mapToInt(Integer::intValue).sum();
     }
 }
 ```
