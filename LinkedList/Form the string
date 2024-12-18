@@ -1,0 +1,36 @@
+Form the string
+You and your friend enjoy playing games involving data structures, especially linked lists. In this challenge, your friend has created a linked list with randomly assigned lowercase strings in its nodes. Alongside, a random target string is provided. Your task is to determine after deleting 0 or more nodes of the linked list, if you can spell out the target string when the nodes' values are concatenated in sequence. If there are multiple ways, find the sequence which uses the earliest nodes. You must first build the linked list and then proceed to solve the problem. Objective: Your task is to write a program that solves the given game. If it's possible to construct the target string by deleting nodes and then concatenating values from the remaining linked list nodes, output the sequence of nodes (separated by spaces) that together form the target string. If it's not possible to form the target string, print-1. Input Format: The input to your program consists of the node strings and target string: The first line contains an integer N, the number of nodes, The second line contains N strings, representing the value of each node. The third line contains the target string. Output Format: Print space separated strings which when concatenated form the target string or print-1. Constraints: 2 <= N <= 10^3 (number of nodes) 1 <= Target string length <= 50 Sample Test Case 1: Input: 4 ap p tt le apple Output: ap p le Explanation 1: Delete the node tt to make remaining nodes when concatenated form apple which is the target string.
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner (System.in);
+      int n=sc.nextInt();
+      sc.nextLine();
+      LinkedList<String>list=new LinkedList<>();
+      for (int i=0; i<n; i++){
+        list.add(sc.next());
+      }
+      sc.nextLine();
+      String target=sc.nextLine();
+      LinkedList<String> ans=new LinkedList<>();
+      StringBuilder cur =new StringBuilder();
+      for (String i:list){
+        if (cur.length()<target.length() && target.startsWith(cur.toString()+i)){
+          ans.add(i);
+          cur.append(i);
+          if (cur.toString().equals(target)){
+            break;
+          }
+        }
+      }
+      if (cur.toString().equals(target)){
+        System.out.print(String.join(" ",ans));
+      }
+      else{
+        System.out.print(-1);
+      }
+  }
+}
+
