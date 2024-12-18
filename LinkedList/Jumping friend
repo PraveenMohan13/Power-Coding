@@ -1,7 +1,16 @@
 Jumping friend
-You and your friend enjoy playing with linked lists. Today, you've decided to create a linked list where each node has a value. In this game, you and your friend start from the first node of the linked list. You can only move one step at a time, while your friend can move forward by one, two, or three nodes in a single move. On each turn, both of you try to move as far ahead as possible. The game continues until one of you reaches the last node. The goal is to determine the value of the node you are on when the game ends. Objective: Given a sequence of integers as input, construct a singly linked list with these integers as the values of the nodes. Then, simulate the game to find the value of the node you are on when your friend reaches the last node
+You and your friend enjoy playing with linked lists. Today, you've decided to create a linked list where each node has a value.
+In this game, you and your friend start from the first node of the linked list. 
+You can only move one step at a time, while your friend can move forward by one, two, or three nodes in a single move. 
+On each turn, both of you try to move as far ahead as possible. The game continues until one of you reaches the last node. 
+The goal is to determine the value of the node you are on when the game ends. 
+Objective: 
+Given a sequence of integers as input, construct a singly linked list with these integers as the values of the nodes. 
+Then, simulate the game to find the value of the node you are on when your friend reaches the last node
 Input Format: 
-The input to your program consists of the values of linked list nodes: The first line contains an integer N, the number of nodes. The second line contains N integers, where each integer is a node's value. 
+The input to your program consists of the values of linked list nodes: 
+The first line contains an integer N, the number of nodes. 
+The second line contains N integers, where each integer is a node's value. 
 Output Format: 
 Print an integer representing the value of the node you are on when the game ends.
 Constraints: 
@@ -9,14 +18,14 @@ Constraints:
 Sample Test Case 1: 
 Input: 
 4 
-12827 
+1 2 8 27 
 Output: 2
 Explanation 1: Initial list: 1->2->8->27 
 You move from 1 to 2. 
 Your friend jumps from 1 to 27 (3 steps). 
 The game ends as your friend reaches the last node. You are on node 2.
 
-
+===================================================================================
 import java.util.*;
 
 public class Main {
