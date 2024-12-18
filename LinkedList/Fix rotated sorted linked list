@@ -1,0 +1,18 @@
+Fix rotated sorted linked list
+You are given a rotated ascending sorted doubly linked list where the nodes are linked in both forward and backward directions. First build the doubly linked list from the input and then proceed to solve the problem. A rotated ascending sorted set of numbers are numbers which were initially sorted in ascending order and then rotated at a pivot. Example: 456123 Objective: A Convert the given rotated ascending sorted doubly linked list into a strictly descending sorted doubly linked list without altering the data within the nodes.  Input Format: The input to your program consists of rotated sorted values: The first line contains an integer N, the number of nodes. The second line contains N integers, where each integer represents the value of a node. Output Format: Print N integers representing the final doubly linked list from start to end. Constraints: 1 <= N <= 10^5 (number of nodes) Sample Test Case 1: Input: 4 3412 Output: 4321 Explanation 1: The sorted descending doubly linked list will have the values in order 4 3 2 1.
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner (System.in);
+      int n=sc.nextInt();
+      LinkedList<Integer> list=new LinkedList<>();
+      for (int i=0; i<n; i++){
+        list.add(sc.nextInt());
+      }
+      Collections.sort(list,Collections.reverseOrder()); 
+      for (int i:list){
+        System.out.print(i+" ");
+      }
+  }
+}
