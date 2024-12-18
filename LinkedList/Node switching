@@ -1,5 +1,38 @@
 Node switching
-In a programming competition, you're given a complex data structure in the form of a doubly linked list. The problem requires you to manipulate the list in a specific way, dividing it into small groups and modifying each group based on the given rules. Such a task might appear in real-world scenarios like optimizing data access patterns or even in more abstract cases like shuffling or organizing data in an efficient manner. First build the doubly linked list from the input and then solve the question. You MUST NOT change values of nodes once assigned. Objective: You are tasked with modifying a doubly linked list where the total number of nodes is divisible by three. For each consecutive group of three nodes: Delete the Second Node: In each group of three nodes, the second node needs to be removed from the list. Reverse the First and Third Nodes: After deleting the second node, you must swap the positions of the first and third nodes within the group. Print the Final List in Reverse Order: After processing the entire list according to the above steps, print the resulting list from the last node to the first. Input Format: The input to your program consists of the values of linked list nodes: The first line contains an integer N, the number of nodes. The second line contains N integers, where each integer is the value of a node. Output Format: Print (2*N/3) integers representing the final doubly linked list from end to start. Constraints: 3<= N <= 9999 (number of nodes) N is a multiple of 3. Sample Test Case 1: Input: 6 123456 Output: 4613 Explanation 1: The first group of three nodes is 1, 2, 3. Delete the second node and swap the first and third making it 3, 1. The second group of three nodes is 4, 5, 6. Delete the second node and swap the first and third making it 6, 4. The final doubly linked list from end to start is 4, 6, 1, 3.
+In a programming competition, you're given a complex data structure in the form of a doubly linked list. 
+The problem requires you to manipulate the list in a specific way, dividing it into small groups 
+and modifying each group based on the given rules. Such a task might appear in real-world scenarios 
+like optimizing data access patterns or even in more abstract cases like shuffling or organizing data 
+in an efficient manner. First build the doubly linked list from the input and then solve the question. 
+You MUST NOT change values of nodes once assigned. 
+Objective: 
+You are tasked with modifying a doubly linked list where the total number of nodes is divisible by three. 
+For each consecutive group of three nodes: Delete the Second Node: In each group of three nodes, 
+the second node needs to be removed from the list. 
+Reverse the First and Third Nodes: After deleting the second node, you must swap the positions of the 
+first and third nodes within the group. Print the Final List in Reverse Order: After processing the entire 
+list according to the above steps, print the resulting list from the last node to the first. 
+Input Format: 
+The input to your program consists of the values of linked list nodes: 
+The first line contains an integer N, the number of nodes. 
+The second line contains N integers, where each integer is the value of a node. 
+Output Format: 
+Print (2*N/3) integers representing the final doubly linked list from end to start. 
+Constraints: 
+3<= N <= 9999 (number of nodes) N is a multiple of 3. 
+Sample Test Case 1: 
+Input: 
+6 
+1 2 3 4 5 6 
+Output: 
+4 6 1 3 
+Explanation 1: 
+The first group of three nodes is 1, 2, 3. 
+Delete the second node and swap the first and third making it 3, 1. 
+The second group of three nodes is 4, 5, 6. 
+Delete the second node and swap the first and third making it 6, 4. 
+The final doubly linked list from end to start is 4, 6, 1, 3.
+===============================================================================================
 
   import java.util.*;
   
