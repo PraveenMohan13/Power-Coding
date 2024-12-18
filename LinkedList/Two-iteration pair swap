@@ -1,0 +1,32 @@
+Two-iteration pair swap
+You are good at programming while your friend is still a beginner. You two decide to play a game where he takes an array and then does 2 iterations on it as follows: First, he iterates from left to right in it and on each index, if the current element is even and the next element is odd, he swaps them. Then, he traverses it from right to left and this time for each index, if the current element is odd and next element is even, he swaps them. Since you are better at programming, to challenge you, he tells you to do the same using a doubly linked list and find his output. Objective: Given the number of nodes and their values in a doubly linked list, replicate the same process of swaps your friend performed on the array and find the final doubly linked list. Input Format: The input to your program consists of number of nodes and their data: The first line contains an integer N, the number of nodes. The second line contains N integers, where each integer represents the value of a node. Output Format: Print N space separated integers representing the final doubly linked list. Constraints: 2 <= N <= 10^5 (number of nodes) Sample Test Case 1: Input: 6 123456 Output: 135246 Explanation 1: The doubly linked list is first 1 2 3 4 5 6. First, iterate from start to end and swap (2, 3), (4, 5) making the doubly linked list 1 3 2 5 4 6. Now, iterate from end to start and swap (5, 2) making the doubly linked list 1 3 5 2 4 5.
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner (System.in);
+      LinkedList<Integer> list=new LinkedList<>();
+      int n=sc.nextInt();
+      for (int i=0; i<n; i++){
+        list.add(sc.nextInt());
+      }
+      
+      for (int i=0; i<n-1; i++){
+        if (list.get(i)%2==0 && list.get(i+1)%2!=0){
+          int temp=list.get(i);
+          list.set(i,list.get(i+1));
+          list.set(i+1,temp);
+        }
+      }
+      for (int i=n-1; i>0; i--){
+        if (list.get(i)%2!=0 && list.get(i-1)%2==0){
+          int temp=list.get(i);
+          list.set(i,list.get(i-1));
+          list.set(i-1,temp);
+        }
+      }
+      for (int i:list){
+        System.out.print(i+" ");  
+      }
+  }
+}
