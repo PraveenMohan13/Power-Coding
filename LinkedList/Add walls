@@ -1,0 +1,28 @@
+Add walls
+In a bustling city, you are tasked with building a series of connected tunnels represented by a doubly linked list of integers. Each integer represents a section's length, but to prevent collapse, you must strategically add walls (represented by 0) whenever the combined length of consecutive sections exceeds a certain threshold. First build a doubly linked list from the given input and then proceed to solve the problem. Objective: Given a doubly linked list of N integers representing tunnel sections and a threshold K, your objective is to iterate through the list, maintaining a cumulative sum of section lengths. Whenever the sum exceeds K, insert a wall (0) before the current section and continue with the remaining sections with cumulative sum now starting from after the wall. Input Format: The input to your program consists of the tunnel section lengths: The first line contains an integer N, the number of sections. The second line contains N integers, where each integer is the length of a section. The third line contains an integer K, the threshold. Output Format: Print the final linked list after adding walls between sections. Constraints: 1 <= N <= 10^5 (number of sections) 1 <= K <= 500 (threshold) Sample Test Case 1: Input: 12345 5 4 Output: 12030405 Explanation 1: First start iterating through the sections. The cumulative sum is calculated from the previous wall. The cumulative sum of section lengths is 1+2+3=6on the third section. So, add a wall behind 3. The cumulative sum of section lengths is 3 + 4 on the fourth section. So, add a wall behind 4. The cumulative sum of section lengths is 4 + 5 on the fourth section. So, add a wall behind 5.
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner (System.in);
+      int n=sc.nextInt();
+      LinkedList<Integer> list=new LinkedList<>();
+      for (int i=0; i<n; i++){
+        list.add(sc.nextInt());
+      }
+      int k=sc.nextInt();
+      int sum=0;
+      
+      for (int i=0; i<list.size(); i++){
+        sum+=list.get(i);
+        if (sum>k){
+          list.add(i,0);
+          sum=list.get(i+1);
+          i++;
+        }
+      }
+      for (int i:list){
+        System.out.print(i+" ");
+      }
+  }
+}
