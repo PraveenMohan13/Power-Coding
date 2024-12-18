@@ -1,0 +1,32 @@
+Delete all evens or odds
+In linked list operations, manipulating data based on initial conditions is a common task. This problem involves constructing a doubly linked list from a set of integers and applying conditional deletions based on the value of the first integer, either removing even or odd nodes. Objective: Given a list of integers, construct a doubly linked list. If the first integer is even, delete all nodes with even values; if odd, delete all nodes with odd values. Print the resulting list to verify the correct deletion of nodes based on the initial condition. Do NOT delete directly from the array. Input Format: The input to your program consists of node values: The first line contains an integer N, the number of nodes The second line contains N integers, where each integer represents a node's value. Output Format: Print space separated integers representing the final linked list. It is guaranteed that there will not be an empty list in the end. Constraints: 2 <= N <= 10^5 (number of nodes) Sample Test Case 1: Input: 4 12815 Output: 28 Explanation 1: First node's value is 1. Since it's odd, delete all nodes with odd values.
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner sc=new Scanner (System.in);
+      int n=sc.nextInt();
+      LinkedList<Integer>list=new LinkedList<>();
+      for (int i=0; i<n; i++){
+        list.add(sc.nextInt());
+      }
+      
+      Iterator<Integer>k=list.iterator();
+      
+      boolean del=list.getFirst()%2==0;
+      
+      while (k.hasNext()){
+        int c=k.next();
+        if (del && c%2==0){
+        k.remove();
+        }
+        else if (!del && c%2!=0){
+          k.remove();
+        }
+        
+      }
+      for (int i:list){
+        System.out.print(i+" ");
+      }
+  }
+}
