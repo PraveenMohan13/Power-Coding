@@ -1,5 +1,31 @@
 Linked list jumps
-For this question, you will be given a list of integers and you first have to build a linked list with each node having the given value and then solve the question. You must not use an array for solving, nor to store values. Objective: Given a singly linked list of integers, starting from the first node, traverse the list by always jumping to the node with the maximum value among the current node and the next five noles. Continue this process until you can no longer make a jump. Input Format: The input to your program consists of the linked list values: The first line contains an integer N, the number of nodes. The second line contains N integers, where each integer is the value of a node in the linked list. Output Format: Print an integer representing the sum of all values of nodes you were on. Constraints: 1 <= N <= 10^5 (number of nodes) Sample Test Case 1: Input: 6 1281543 Output: 16 Explanation 1: You start at the first node (value 1). Among the current and next five nodes, the greatest value is 15. You jump to the node with value 15. Now, there are no nodes with a greater value ahead, The sum of all nodes you were on is 1+15=16.
+For this question, you will be given a list of integers and you first have to build a linked list 
+with each node having the given value and then solve the question. 
+You must not use an array for solving, nor to store values. 
+Objective: 
+Given a singly linked list of integers, starting from the first node, traverse the list by always 
+jumping to the node with the maximum value among the current node and the next five noles. 
+Continue this process until you can no longer make a jump. 
+Input Format: 
+The input to your program consists of the linked list values: 
+The first line contains an integer N, the number of nodes. 
+The second line contains N integers, where each integer is the value of a node in the linked list. 
+Output Format:
+Print an integer representing the sum of all values of nodes you were on. 
+Constraints: 
+1 <= N <= 10^5 (number of nodes) 
+Sample Test Case 1: 
+Input: 
+6 
+1 2 8 15 4 3 
+Output: 
+16 
+Explanation 1: 
+You start at the first node (value 1). 
+Among the current and next five nodes, the greatest value is 15. 
+You jump to the node with value 15. 
+Now, there are no nodes with a greater value ahead, The sum of all nodes you were on is 1+15=16.
+=============================================================================================
 import java.util.*;
 
 public class Main {
