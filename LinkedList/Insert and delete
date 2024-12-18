@@ -1,9 +1,47 @@
 Insert and delete
-Linked lists are a type of data structure that helps store and manage data efficiently. They are useful when you need to frequently add or remove elements. This problem focuses on using linked lists for specific operations. You will be given 2 types of commands: insert {value} delete {value} ubl For insert, you must insert the value in the middle of the linked list if there is an even number of nodes and just before the middle node if there is an odd number of nodes. For delete, you must delete all nodes with the value in the linked list. 
- Objective: Create a program that can handle the list of commands to manage the linked list. Given N commands, the program should either insert a new value in the middle of the list or remove all instances of a value from the list. Input Format: The input to your program consists of the commands:
-The first line contains an integer N. the number of commands. The next N lines each contain a command of the type explained in background. Output Format: Print the integers representing the values of the final linked list nodes. It is guaranteed the linked list will not be empty in the end. Constraints: 1<= N <= 10^3 (number of commands) Sample Test Case 1: Input: 6 insert 1 insert 2 insert 3 insert 4 insert 5 insert 6
-Output: 246531 Explanation 1: Initial List: Empty. Insert 1: List becomes 1. Insert 2: 2 is added in the middle, making the list 2 -> 1. Insert 3: 3 is added before 1 (middle of current list), resulting in 2->3 -> 1. Insert 4: 4 is inserted between 2 and 3, updating the list to 2-4-3->1. Insert 5: 5 is added before 3, resulting in 2 -> 4->5->3- >1. Insert 6: 6 is added between 4 and 5, making the final list 2-4-6-5->3 -> 1.
-
+Linked lists are a type of data structure that helps store and manage data efficiently. 
+They are useful when you need to frequently add or remove elements. 
+This problem focuses on using linked lists for specific operations. 
+You will be given 2 types of commands: 
+insert {value} 
+delete {value} 
+For insert, you must insert the value in the middle of the linked list 
+if there is an even number of nodes and just before the middle node 
+if there is an odd number of nodes. 
+For delete, you must delete all nodes with the value in the linked list. 
+Objective: 
+Create a program that can handle the list of commands to manage the linked list. 
+Given N commands, the program should either insert a new value in the middle of the list 
+or remove all instances of a value from the list. 
+Input Format: 
+The input to your program consists of the commands:
+The first line contains an integer N. the number of commands. 
+The next N lines each contain a command of the type explained in background.
+Output Format: 
+Print the integers representing the values of the final linked list nodes. 
+It is guaranteed the linked list will not be empty in the end. 
+Constraints: 
+1<= N <= 10^3 (number of commands) 
+Sample Test Case 1: 
+Input: 
+6 
+insert 1 
+insert 2 
+insert 3 
+insert 4 
+insert 5 
+insert 6
+Output: 
+2 4 6 5 3 1 
+Explanation 1: 
+Initial List: Empty. 
+Insert 1: List becomes 1. 
+Insert 2: 2 is added in the middle, making the list 2 -> 1. 
+Insert 3: 3 is added before 1 (middle of current list), resulting in 2->3 -> 1. 
+Insert 4: 4 is inserted between 2 and 3, updating the list to 2-4-3->1. 
+Insert 5: 5 is added before 3, resulting in 2 -> 4->5->3- >1. 
+Insert 6: 6 is added between 4 and 5, making the final list 2-4-6-5->3 -> 1.
+==================================================================================
   import java.util.*;
   
   public class Main {
