@@ -1,0 +1,108 @@
+Given a non-negative integer represented as a linked list of digits, plus one to the integer.
+The digits are store such that the most significant digit is at the head of the list.
+Write a program without using collection.
+ 
+Example 1:
+Input: head = [1,2,3]
+Output: [1,2,4]
+Example 2:
+Input: head = [0]
+Output: [1]
+ 
+Constraints:
+The number of nodes in the linked list is in the range [1, 100].
+0 <= Node.val <= 9
+The number represented by the linked list does not contain leading zeros except for the zero itself. 
+Test Case 1
+Input:
+head = [1, 2, 3]
+Output:
+[1, 2, 4]
+
+Test Case 2
+Input:
+head = [0]
+Output:
+[1]
+
+Test Case 3
+Input:
+head = [9]
+Output:
+[1, 0]
+
+Test Case 4
+Input:
+head = [1, 9, 9]
+Output:
+[2, 0, 0]
+
+Test Case 5
+Input:
+head = [9, 9, 9]
+Output:
+[1, 0, 0, 0]
+
+Test Case 6
+Input:
+head = [4, 5, 6, 7]
+Output:
+[4, 5, 6, 8]
+
+Test Case 7
+Input:
+head = [8, 7, 6, 5, 4]
+Output:
+[8, 7, 6, 5, 5]
+
+Test Case 8
+Input:
+head = [1, 0, 0, 0]
+Output:
+[1, 0, 0, 1]
+
+Test Case 9
+Input:
+head = [2, 3, 4, 5, 9]
+Output:
+[2, 3, 4, 6, 0]
+
+Test Case 10
+Input:
+head = [9, 9, 8, 9, 9]
+Output:
+[9, 9, 9, 0, 0]
+
+
+
+
+Sol
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode plusOne(ListNode head) {
+        ListNode dummy = new ListNode(0, head);
+        ListNode target = dummy;
+        while (head != null) {
+            if (head.val != 9) {
+                target = head;
+            }
+            head = head.next;
+        }
+        ++target.val;
+        target = target.next;
+        while (target != null) {
+            target.val = 0;
+            target = target.next;
+        }
+        return dummy.val == 1 ? dummy : dummy.next;
+    }
+}
